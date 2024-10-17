@@ -1,0 +1,403 @@
+const dummyData = [
+  {
+    "state": "Maharashtra",
+    "cities": [
+      {
+        "cityName": "Mumbai",
+        "buildings": [
+          {
+            "buildingName": "World Trade Center",
+            "floors": [
+              {
+                "floorNumber": 5,
+                "vacantSpaces": 3,
+                "spaceArea": "2000 sqft"
+              },
+              {
+                "floorNumber": 7,
+                "vacantSpaces": 2,
+                "spaceArea": "1500 sqft"
+              }
+            ]
+          },
+          {
+            "buildingName": "Antilia",
+            "floors": [
+              {
+                "floorNumber": 10,
+                "vacantSpaces": 1,
+                "spaceArea": "5000 sqft"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "cityName": "Pune",
+        "buildings": [
+          {
+            "buildingName": "EON IT Park",
+            "floors": [
+              {
+                "floorNumber": 3,
+                "vacantSpaces": 4,
+                "spaceArea": "1200 sqft"
+              },
+              {
+                "floorNumber": 6,
+                "vacantSpaces": 2,
+                "spaceArea": "1400 sqft"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "cityName": "Nagpur",
+        "buildings": [
+          {
+            "buildingName": "Empress Mall",
+            "floors": [
+              {
+                "floorNumber": 2,
+                "vacantSpaces": 3,
+                "spaceArea": "1000 sqft"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "cityName": "Nashik",
+        "buildings": [
+          {
+            "buildingName": "City Center Mall",
+            "floors": [
+              {
+                "floorNumber": 1,
+                "vacantSpaces": 5,
+                "spaceArea": "1200 sqft"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "state": "Karnataka",
+    "cities": [
+      {
+        "cityName": "Bangalore",
+        "buildings": [
+          {
+            "buildingName": "Manyata Tech Park",
+            "floors": [
+              {
+                "floorNumber": 8,
+                "vacantSpaces": 4,
+                "spaceArea": "2200 sqft"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "cityName": "Mysore",
+        "buildings": [
+          {
+            "buildingName": "Forum Centre City",
+            "floors": [
+              {
+                "floorNumber": 2,
+                "vacantSpaces": 2,
+                "spaceArea": "1600 sqft"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "state": "Tamil Nadu",
+    "cities": [
+      {
+        "cityName": "Chennai",
+        "buildings": [
+          {
+            "buildingName": "Olympia Tech Park",
+            "floors": [
+              {
+                "floorNumber": 4,
+                "vacantSpaces": 3,
+                "spaceArea": "1800 sqft"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "cityName": "Coimbatore",
+        "buildings": [
+          {
+            "buildingName": "Brookefields Mall",
+            "floors": [
+              {
+                "floorNumber": 5,
+                "vacantSpaces": 2,
+                "spaceArea": "1500 sqft"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "state": "Gujarat",
+    "cities": [
+      {
+        "cityName": "Ahmedabad",
+        "buildings": [
+          {
+            "buildingName": "GIFT City",
+            "floors": [
+              {
+                "floorNumber": 12,
+                "vacantSpaces": 5,
+                "spaceArea": "2500 sqft"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "cityName": "Surat",
+        "buildings": [
+          {
+            "buildingName": "VR Mall",
+            "floors": [
+              {
+                "floorNumber": 3,
+                "vacantSpaces": 2,
+                "spaceArea": "1700 sqft"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "state": "Rajasthan",
+    "cities": [
+      {
+        "cityName": "Jaipur",
+        "buildings": [
+          {
+            "buildingName": "World Trade Park",
+            "floors": [
+              {
+                "floorNumber": 6,
+                "vacantSpaces": 3,
+                "spaceArea": "2000 sqft"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "cityName": "Jodhpur",
+        "buildings": [
+          {
+            "buildingName": "Ashapurna Mall",
+            "floors": [
+              {
+                "floorNumber": 2,
+                "vacantSpaces": 1,
+                "spaceArea": "1200 sqft"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "state": "Uttar Pradesh",
+    "cities": [
+      {
+        "cityName": "Lucknow",
+        "buildings": [
+          {
+            "buildingName": "One Awadh Center",
+            "floors": [
+              {
+                "floorNumber": 3,
+                "vacantSpaces": 3,
+                "spaceArea": "1500 sqft"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "cityName": "Noida",
+        "buildings": [
+          {
+            "buildingName": "DLF Mall of India",
+            "floors": [
+              {
+                "floorNumber": 10,
+                "vacantSpaces": 2,
+                "spaceArea": "1800 sqft"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "state": "West Bengal",
+    "cities": [
+      {
+        "cityName": "Kolkata",
+        "buildings": [
+          {
+            "buildingName": "South City Mall",
+            "floors": [
+              {
+                "floorNumber": 7,
+                "vacantSpaces": 4,
+                "spaceArea": "2200 sqft"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "cityName": "Durgapur",
+        "buildings": [
+          {
+            "buildingName": "Junction Mall",
+            "floors": [
+              {
+                "floorNumber": 5,
+                "vacantSpaces": 3,
+                "spaceArea": "1400 sqft"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "state": "Punjab",
+    "cities": [
+      {
+        "cityName": "Ludhiana",
+        "buildings": [
+          {
+            "buildingName": "Pavilion Mall",
+            "floors": [
+              {
+                "floorNumber": 6,
+                "vacantSpaces": 2,
+                "spaceArea": "2000 sqft"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "cityName": "Amritsar",
+        "buildings": [
+          {
+            "buildingName": "Alpha One Mall",
+            "floors": [
+              {
+                "floorNumber": 4,
+                "vacantSpaces": 3,
+                "spaceArea": "1500 sqft"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "state": "Haryana",
+    "cities": [
+      {
+        "cityName": "Gurgaon",
+        "buildings": [
+          {
+            "buildingName": "Cyber Hub",
+            "floors": [
+              {
+                "floorNumber": 10,
+                "vacantSpaces": 3,
+                "spaceArea": "3000 sqft"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "cityName": "Faridabad",
+        "buildings": [
+          {
+            "buildingName": "Crown Plaza",
+            "floors": [
+              {
+                "floorNumber": 5,
+                "vacantSpaces": 2,
+                "spaceArea": "1800 sqft"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "state": "Madhya Pradesh",
+    "cities": [
+      {
+        "cityName": "Indore",
+        "buildings": [
+          {
+            "buildingName": "Treasure Island Mall",
+            "floors": [
+              {
+                "floorNumber": 7,
+                "vacantSpaces": 4,
+                "spaceArea": "2100 sqft"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "cityName": "Bhopal",
+        "buildings": [
+          {
+            "buildingName": "DB Mall",
+            "floors": [
+              {
+                "floorNumber": 3,
+                "vacantSpaces": 2,
+                "spaceArea": "1300 sqft"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]
+export default dummyData;
